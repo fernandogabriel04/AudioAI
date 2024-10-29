@@ -1,0 +1,5 @@
+Transcrição:
+ Eu gostaria de fazer um teste com o meu script e gostaria que ele resumisse e transcrevesse o que foi dito nesse áudio.
+
+Resumo:
+Eu gostaria de fazer um teste com o meu script. Gostaria que ele resumisse e transcrevesse o que foi dito nesse áudio.
