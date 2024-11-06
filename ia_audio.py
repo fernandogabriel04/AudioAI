@@ -33,7 +33,7 @@ def transcrever_audio(arquivo_audio):
 
 # Função para gerar um relatório detalhado
 def gerar_relatorio_detalhado(texto):
-    prompt = (f"Sabendo que se trata de um texto que sera encaminhado para uma secretaria municipal. Primeiro classifique o texto em algumas dessas opções: Meio Ambiente, Educação, Fazenda, Infraestrutura, Abastecimento pesca e agricultura, Turismo, Saúde, Esporte. Depois escreva uma subcategoria. Em seguida defina o tema principal abordado. Após esses dois passos, faça um resumo bem objetivo. Conteúdo: {texto}")
+    prompt = (f"Sabendo que se trata de um texto que sera encaminhado para uma secretaria do municipio de Maceió. Primeiro classifique o texto em algumas dessas opções: Meio Ambiente, Educação, Fazenda, Infraestrutura, Abastecimento pesca e agricultura, Turismo, Saúde, Esporte. Depois escreva uma subcategoria. Em seguida defina o tema principal abordado. Após esses dois passos, faça um resumo bem objetivo. Conteúdo: {texto}")
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}]
@@ -42,7 +42,7 @@ def gerar_relatorio_detalhado(texto):
     return relatorio
 
 # Inicialização
-modelo_whisper = whisper.load_model("large")
+modelo_whisper = whisper.load_model("base")
 client = OpenAI()  # Certifique-se de definir a API_KEY nas variáveis de ambiente
 conexao = sqlite3.connect("db/dados_audio.db")
 inicializar_banco(conexao)
