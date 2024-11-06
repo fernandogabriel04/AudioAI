@@ -33,7 +33,7 @@ def transcrever_audio(arquivo_audio):
 
 # Função para gerar um relatório detalhado
 def gerar_relatorio_detalhado(texto):
-    prompt = (f"Sabendo que se trata de um texto que sera encaminhado para uma secretaria do municipio de Maceió. Primeiro classifique o texto em algumas dessas opções: Meio Ambiente, Educação, Fazenda, Infraestrutura, Abastecimento pesca e agricultura, Turismo, Saúde, Esporte. Depois escreva uma subcategoria. Em seguida defina o tema principal abordado. Após esses dois passos, faça um resumo bem objetivo. Conteúdo: {texto}")
+    prompt = (f"Sabendo que se trata de um texto que sera encaminhado para uma secretaria do municipio de Maceió. Primeiro classifique o texto em algumas dessas opções: Saúde, Infraestrutura, Meio Ambiente. Depois escreva uma subcategoria entre essa opções: vagas para sepultamento, indicação de descarte irregular, ⁠falta de coleta domiciliar, poda de arvore, supressao de arvore, capinação, limpeza em geral, tapa buraco, implantação de asfalto, manutenção de vias não pavimentadas, alagamento, afundamento, limpeza de boca de lobo, marcação de exames consutlas e cirurgias, unidade de saude, atendimento medico. Em seguida defina o tema principal abordado. Após esses dois passos, faça um resumo bem objetivo. Conteúdo: {texto}")
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}]
