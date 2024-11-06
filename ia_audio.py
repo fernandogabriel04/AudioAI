@@ -43,7 +43,8 @@ def gerar_relatorio_detalhado(texto):
 
 # Inicialização
 modelo_whisper = whisper.load_model("base")
-client = OpenAI()  # Certifique-se de definir a API_KEY nas variáveis de ambiente
+apikey = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=apikey)
 conexao = sqlite3.connect("db/dados_audio.db")
 inicializar_banco(conexao)
 
