@@ -33,7 +33,14 @@ def transcrever_audio(arquivo_audio):
 
 # Função para gerar um relatório detalhado
 def gerar_relatorio_detalhado(texto):
-    prompt = (f"Sabendo que se trata de um texto que sera encaminhado para uma secretaria do municipio de Maceió. Primeiro classifique o texto em algumas dessas opções: Saúde, Infraestrutura, Meio Ambiente. Depois escreva uma subcategoria entre essa opções: vagas para sepultamento, indicação de descarte irregular, ⁠falta de coleta domiciliar, poda de arvore, supressao de arvore, capinação, limpeza em geral, tapa buraco, implantação de asfalto, manutenção de vias não pavimentadas, alagamento, afundamento, limpeza de boca de lobo, marcação de exames consutlas e cirurgias, unidade de saude, atendimento medico. Em seguida defina o tema principal abordado. Após esses dois passos, faça um resumo bem objetivo. Conteúdo: {texto}")
+    prompt = (
+            f"Sabendo que se trata de um texto que será encaminhado para uma secretaria municipal."
+            f"Primeiro classifique o texto em algumas dessas opções: Meio Ambiente, Educação, Fazenda, Infraestrutura, Limpeza Urbana, Turismo, Saúde, Mobilidade Urbana."
+            f"Depois escreva uma subcategoria. Algumas opções de subcategorias: vagas para sepultamento, indicação de descarte irregular, falta de coleta domiciliar, poda de arvore, supressão de arvore, capinação, limpeza em geral, tapar buraco, implantação de asfalto, manutenção de vias não pavimentadas, alagamento, afundamento, limpeza de boca de lobo, marcação de exames consultas e cirurgias, unidade de saúde, atendimento medico. Em seguida defina o tema principal abordado."
+            f"Após esses passos, faça um resumo bem objetivo."
+            f"sempre me retorne nessa estrutura, exemplo: Categoria: Infraestrutura Subcategoria: Praças Tema: Iluminação Resumo: puxar do texto"
+            f"Gere de acordo com esse conteúdo: {texto}"
+              )
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}]
