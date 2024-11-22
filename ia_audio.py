@@ -35,8 +35,8 @@ def transcrever_audio(arquivo_audio):
 def gerar_relatorio_detalhado(texto):
     prompt = (
             f"Sabendo que se trata de um texto que será encaminhado para uma secretaria municipal."
-            f"Primeiro classifique o texto em algumas dessas opções: Meio Ambiente, Educação, Fazenda, Infraestrutura, Limpeza Urbana, Turismo, Saúde, Mobilidade Urbana."
-            f"Depois escreva uma subcategoria. Algumas opções de subcategorias: vagas para sepultamento, indicação de descarte irregular, falta de coleta domiciliar, poda de arvore, supressão de arvore, capinação, limpeza em geral, tapar buraco, implantação de asfalto, manutenção de vias não pavimentadas, alagamento, afundamento, limpeza de boca de lobo, marcação de exames consultas e cirurgias, unidade de saúde, atendimento medico. Em seguida defina o tema principal abordado."
+            f"Primeiro classifique o texto em algumas dessas opções: Meio Ambiente, Educação, Fazenda, Infraestrutura, Limpeza Urbana, Turismo, Saúde, Transporte."
+            f"Depois escreva uma subcategoria. Algumas opções de subcategorias: Vagas para Sepultamento, Indicação de Descarte Irregular, Falta de Coleta Domiciliar, Poda de Árvore, Supressão de Árvore, Capinação, Limpeza em Geral, Tapar Buraco, Implantação de Asfalto, Manutenção de Vias não Pavimentadas, Alagamento, Afundamento, Limpeza de Boca de Lobo, Marcação de Exames Consultas e Cirurgias, Unidade de Saúde, Atendimento Medico, Ônibus, Tempo de Viagem, Linhas, Integração, Terminais, Abrigos, VAMU (Cartão de Transporte), Acessibilidade em Transporte. Em seguida defina o tema principal abordado."
             f"Após esses passos, faça um resumo bem objetivo."
             f"sempre me retorne nessa estrutura, exemplo: Categoria: Infraestrutura Subcategoria: Praças Tema: Iluminação Resumo: puxar do texto"
             f"Gere de acordo com esse conteúdo: {texto}"
